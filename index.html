@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars RPG</title>
+
+    <!-- Added link to the jQuery Library -->
+    <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
+
+    <!-- Added a link to Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<button class="attack" type="button">Attack</button>
+
+<script type="text/javascript">
+
+$(document).ready(function(){ // triggers the following script soon as the document is loaded //
+
+    var character1 = {
+        name: "Leia",
+        healthPoints: 80,
+        attackPower: 10,
+        counterAttackPower: 20,
+
+        increaseAttackPower: function() {
+            this.attackPower += this.attackPower;    
+        },
+
+        getHealthPoints: function(damage) {
+            this.healthPoints = this.healthPoints - damage;
+            console.log(this.name + "'s health points is now " + this.healthPoints);
+
+            if(this.healthPoints <= 0)
+                console.log(this.name + " is defeated.");
+        }, 
+
+        performAttack: function(n) {
+            console.log(this.name + "'s blaster attacks " + n + " for " + this.attackPower);
+        },
+
+        performCounterAttack: function(n) {
+            if(this.healthPoints > 0) {
+                console.log(this.name + "'s blaster counterattacks " + n + " for " + this.counterAttackPower);
+            }
+        }
+    }
+
+    var character2 = {
+        name: "Storm Trooper",
+        healthPoints: 90,
+        attackPower: 15,
+        counterAttackPower: 15,
+
+        increaseAttackPower: function() {
+            this.attackPower += this.attackPower;    
+        },
+
+        getHealthPoints: function(damage) {
+            this.healthPoints = this.healthPoints - damage;
+            console.log(this.name + "'s health points is now " + this.healthPoints);
+
+            if(this.healthPoints <= 0)
+                console.log(this.name + " is defeated.");
+        },
+
+        performAttack: function(n) {
+            console.log(this.name + "'s blaster attacks " + n + " for " + this.AttackPower);
+        },
+
+        performCounterAttack: function(n) {
+            if(this.healthPoints > 0) {
+                console.log(this.name + "'s blaster counterattacks " + n + " for " + this.counterAttackPower);
+            }
+        }
+    }
+
+
+    $(".attack").on("click", function() {
+
+        console.log("CLICKED attack");
+        
+        character1.performAttack(character2.name)
+        character2.getHealthPoints(character1.attackPower);;
+        character2.performCounterAttack(character1.name);
+        character1.getHealthPoints(character2.counterAttackPower);
+        character1.increaseAttackPower();
+    });
+});
+
+</script>
+
+</body>
+</html>
