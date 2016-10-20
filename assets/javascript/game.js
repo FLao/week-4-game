@@ -1,96 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Star Wars RPG</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-<script src="https://code.jquery.com/jquery.js"></script>
-</head>
-<body>
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
-        </div>
-        <div class="col-md-4">
-            <h1>Star Wars RPG</h1> 
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-md-8">
-            <div class="characterSelect">
-                <div id="firstCharacter">Luke Skywalker<img class="firstPortrait" src="assets/images/luke-skywalker.png"><div id="hp1">100</div></div>
-                <div id="secondCharacter">Princess Leia<img class="secondPortrait" src="assets/images/princess-leia.png"><div id="hp2">80</div></div>
-                <div id="thirdCharacter">Darth Vader<img class="thirdPortrait" src="assets/images/darth-vader.png"><div id="hp3">110</div></div>
-                <div id="fourthCharacter">Stormtrooper<img class="fourthPortrait" src="assets/images/stormtrooper.png"><div id="hp4">90</div></div>
-            </div>
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-7">
-            <div class="yourCharacter">
-                <h2>Your Character</h2>                
-            </div>
-        </div>
-        <div class="col-md-5">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-7">
-            <div class="yourEnemies">
-                <h2>Enemies Available To Attack</h2>                
-            </div>
-        </div>
-        <div class="col-md-5">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-7">
-            <div class="fightSection">
-                <h2>Fight Section</h2>
-                <button class="btn btn-default attack">Attack</button>    </div>
-        </div>
-        <div class="col-md-5">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-7">
-            <div class="yourEnemy">
-                <h2>Enemy</h2>                
-            </div>
-        </div>
-        <div class="col-md-5">
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-4">
-            <div class="battleLog">
-                <h2>Battle Log</h2>
-                <p id="playerAction"></p> 
-                <p id="enemyAction"></p>
-                <p id="resultAction"></p>
-                <p id="gameEnds"></p> 
-                <p class="new"></p>                  
-            </div>
-        </div>
-        <div class="col-md-8">
-        </div>
-    </div>
-
-</div>
-
-
-<script type="text/javascript">
-
 $(document).ready(function(){ // triggers the following script soon as the document is loaded //
 
     var playerChosen = false;
@@ -98,10 +5,9 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
         $(".firstPortrait").on("click", function(){
             if (!playerChosen) {
-                $(".firstPortrait").css("border", "2px solid green");
-                $(".secondPortrait").css("backgroundColor", "red");
-                $(".thirdPortrait").css("backgroundColor", "red");
-                $(".fourthPortrait").css("backgroundColor", "red");
+                $(".secondPortrait").css("background-color", "#ff0000");
+                $(".thirdPortrait").css("background-color", "#ff0000");
+                $(".fourthPortrait").css("background-color", "#ff0000");
                 $("#firstCharacter").appendTo(".yourCharacter");
                 $("#secondCharacter").appendTo(".yourEnemies");
                 $("#thirdCharacter").appendTo(".yourEnemies");
@@ -112,7 +18,7 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
             else if(playerChosen && !enemyChosen) {
                 $("#firstCharacter").appendTo(".yourEnemy");
-                $(".firstPortrait").css("backgroundColor", "#000000"); 
+                $(".firstPortrait").css("background-color", "#000000"); 
                 enemyChosen = true;
                 characterOne.isEnemy = true;
             }
@@ -120,10 +26,9 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
         $(".secondPortrait").on("click", function(){
             if (!playerChosen) {
-                $(".secondPortrait").css("border", "2px solid green");
-                $(".firstPortrait").css("backgroundColor", "red");
-                $(".thirdPortrait").css("backgroundColor", "red");
-                $(".fourthPortrait").css("backgroundColor", "red");
+                $(".firstPortrait").css("background-color", "#ff0000");
+                $(".thirdPortrait").css("background-color", "#ff0000");
+                $(".fourthPortrait").css("background-color", "#ff0000");
                 $("#secondCharacter").appendTo(".yourCharacter");
                 $("#firstCharacter").appendTo(".yourEnemies");
                 $("#thirdCharacter").appendTo(".yourEnemies");
@@ -134,7 +39,7 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
             else if (playerChosen && !enemyChosen) {
                 $("#secondCharacter").appendTo(".yourEnemy");
-                $(".secondPortrait").css("backgroundColor", "#000000"); 
+                $(".secondPortrait").css("background-color", "#000000"); 
                 enemyChosen = true;
                 characterTwo.isEnemy = true;
             }
@@ -142,10 +47,9 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
         $(".thirdPortrait").on("click", function(){
             if (!playerChosen) {
-                $(".thirdPortrait").css("border", "2px solid green");
-                $(".firstPortrait").css("backgroundColor", "red");
-                $(".secondPortrait").css("backgroundColor", "red");
-                $(".fourthPortrait").css("backgroundColor", "red");
+                $(".firstPortrait").css("background-color", "#ff0000");
+                $(".secondPortrait").css("background-color", "#ff0000");
+                $(".fourthPortrait").css("background-color", "#ff0000");
                 $("#thirdCharacter").appendTo(".yourCharacter");
                 $("#firstCharacter").appendTo(".yourEnemies");
                 $("#secondCharacter").appendTo(".yourEnemies");
@@ -156,7 +60,7 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
             else if(playerChosen && !enemyChosen) {
                 $("#thirdCharacter").appendTo(".yourEnemy");
-                $(".thirdPortrait").css("backgroundColor", "#000000"); 
+                $(".thirdPortrait").css("background-color", "#000000"); 
                 enemyChosen = true;
                 characterThree.isEnemy = true;
             }
@@ -164,10 +68,9 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
         $(".fourthPortrait").on("click", function() {
             if (!playerChosen) {
-                $(".fourthPortrait").css("border", "2px solid green");
-                $(".firstPortrait").css("backgroundColor", "red");
-                $(".secondPortrait").css("backgroundColor", "red");
-                $(".thirdPortrait").css("backgroundColor", "red");
+                $(".firstPortrait").css("background-color", "#ff0000");
+                $(".secondPortrait").css("background-color", "#ff0000");
+                $(".thirdPortrait").css("background-color", "#ff0000");
                 $("#fourthCharacter").appendTo(".yourCharacter");
                 $("#firstCharacter").appendTo(".yourEnemies");
                 $("#secondCharacter").appendTo(".yourEnemies");
@@ -178,15 +81,13 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
             else if(playerChosen && !enemyChosen) {
                 $("#fourthCharacter").appendTo(".yourEnemy");
-                $(".fourthPortrait").css("backgroundColor", "#000000"); 
+                $(".fourthPortrait").css("background-color", "#000000"); 
                 enemyChosen = true;
                 characterFour.isEnemy = true;
             }
         });
 
     $(".attack").on("click", function() {
-
-        console.log("CLICKED attack");
 
         if(characterOne.isPlayer) 
             characterOneVersus();
@@ -203,11 +104,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
     function characterOneVersus() {
          // characterOne versus everybody else
-        if((characterTwo.isEnemy === true) && (characterTwo.isDefeated === false)) {
+        if((characterTwo.isEnemy) && (!characterTwo.isDefeated)) {
             characterOne.performAttack(characterTwo.name);
             characterTwo.getHealthPoints(characterOne.attackPower);
 
-            if(characterTwo.isDefeated === false) {
+            if(!characterTwo.isDefeated) {
                 characterTwo.performCounterAttack(characterOne.name);
                 characterOne.getHealthPoints(characterTwo.counterAttackPower);
             }
@@ -215,11 +116,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterOne.increaseAttackPower();
         }
 
-        else if((characterThree.isEnemy === true) && (characterThree.isDefeated === false)) {
+        else if((characterThree.isEnemy) && (!characterThree.isDefeated)) {
             characterOne.performAttack(characterThree.name);
             characterThree.getHealthPoints(characterOne.attackPower);
 
-            if(characterThree.isDefeated === false) {
+            if(!characterThree.isDefeated) {
                 characterThree.performCounterAttack(characterOne.name);
                 characterOne.getHealthPoints(characterThree.counterAttackPower);
             }
@@ -227,11 +128,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterOne.increaseAttackPower();
         }
 
-        else if((characterFour.isEnemy === true) && (characterFour.isDefeated === false)) {
+        else if((characterFour.isEnemy) && (!characterFour.isDefeated)) {
             characterOne.performAttack(characterFour.name);
             characterFour.getHealthPoints(characterOne.attackPower);
 
-            if(characterFour.isDefeated === false) {
+            if(!characterFour.isDefeated) {
                 characterFour.performCounterAttack(characterOne.name);
                 characterOne.getHealthPoints(characterFour.counterAttackPower);
             }
@@ -239,19 +140,17 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterOne.increaseAttackPower();
         }
 
-        else {
+        else 
             $("#playerAction").html("There is no enemy to attack.");
-            console.log("There is no enemy to attack.");
-        }
     }
 
     function characterTwoVersus() {
     // characterTwo versus everybody else
-        if((characterOne.isEnemy === true) && (characterOne.isDefeated === false)) {
+        if((characterOne.isEnemy) && (!characterOne.isDefeated)) {
             characterTwo.performAttack(characterOne.name);
             characterOne.getHealthPoints(characterTwo.attackPower);
             
-            if(characterOne.isDefeated === false) {
+            if(!characterOne.isDefeated) {
                 characterOne.performCounterAttack(characterTwo.name);
                 characterTwo.getHealthPoints(characterOne.counterAttackPower);
             }
@@ -259,11 +158,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterTwo.increaseAttackPower();
         }
 
-        else if((characterThree.isEnemy === true) && (characterThree.isDefeated === false)) {
+        else if((characterThree.isEnemy) && (!characterThree.isDefeated)) {
             characterTwo.performAttack(characterThree.name);
             characterThree.getHealthPoints(characterTwo.attackPower);
 
-            if(characterThree.isDefeated === false) {    
+            if(!characterThree.isDefeated) {    
                 characterThree.performCounterAttack(characterTwo.name);
                 characterTwo.getHealthPoints(characterThree.counterAttackPower);
             }
@@ -271,11 +170,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterTwo.increaseAttackPower();
         }
 
-        else if((characterFour.isEnemy === true) && (characterFour.isDefeated === false)) {
+        else if((characterFour.isEnemy) && (!characterFour.isDefeated)) {
             characterTwo.performAttack(characterFour.name);
             characterFour.getHealthPoints(characterTwo.attackPower);
             
-            if(characterFour.isDefeated === false) {
+            if(!characterFour.isDefeated) {
                 characterFour.performCounterAttack(characterTwo.name);
                 characterTwo.getHealthPoints(characterFour.counterAttackPower);
             }
@@ -283,19 +182,17 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterTwo.increaseAttackPower();
         }
 
-        else {
+        else 
             $("#playerAction").html("There is no enemy to attack.");
-            console.log("There is no enemy to attack.");
-        }
     }
 
     function characterThreeVersus() {
     // characterThree versus everybody else
-        if((characterOne.isEnemy === true) && (characterOne.isDefeated === false)) {
+        if((characterOne.isEnemy) && (!characterOne.isDefeated)) {
             characterThree.performAttack(characterOne.name);
             characterOne.getHealthPoints(characterThree.attackPower);
 
-            if(characterOne.isDefeated === false) {
+            if(!characterOne.isDefeated) {
                 characterOne.performCounterAttack(characterThree.name);
                 characterThree.getHealthPoints(characterOne.counterAttackPower);
             }
@@ -303,11 +200,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterThree.increaseAttackPower();
         }
 
-        else if((characterThree.isPlayer === true) && (characterTwo.isEnemy === true) && (characterTwo.isDefeated === false)) {
+        else if((characterTwo.isEnemy) && (!characterTwo.isDefeated)) {
             characterThree.performAttack(characterTwo.name);
             characterTwo.getHealthPoints(characterThree.attackPower);
             
-            if(characterTwo.isDefeated === false) {
+            if(!characterTwo.isDefeated) {
                 characterTwo.performCounterAttack(characterThree.name);
                 characterThree.getHealthPoints(characterTwo.counterAttackPower);
             }
@@ -315,11 +212,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterThree.increaseAttackPower();
         }
 
-        else if((characterFour.isEnemy === true) && (characterFour.isDefeated === false)) {
+        else if((characterFour.isEnemy) && (!characterFour.isDefeated)) {
             characterThree.performAttack(characterFour.name);
             characterFour.getHealthPoints(characterThree.attackPower);
 
-            if(characterFour.isDefeated === false) {
+            if(!characterFour.isDefeated) {
                 characterFour.performCounterAttack(characterThree.name);
                 characterThree.getHealthPoints(characterFour.counterAttackPower);
             }
@@ -327,19 +224,17 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterThree.increaseAttackPower();
         }
 
-        else {
+        else 
             $("#playerAction").html("There is no enemy to attack.");
-            console.log("There is no enemy to attack.");
-        }
     }
 
     function characterFourVersus() {
         // characterFour versus everybody else
-        if((characterOne.isEnemy === true) && (characterOne.isDefeated === false)) {
+        if((characterOne.isEnemy) && (!characterOne.isDefeated)) {
             characterFour.performAttack(characterOne.name);
             characterOne.getHealthPoints(characterFour.attackPower);
             
-            if(characterOne.isDefeated === false) {
+            if(!characterOne.isDefeated) {
                 characterOne.performCounterAttack(characterFour.name);
                 characterFour.getHealthPoints(characterOne.counterAttackPower);
             }
@@ -347,11 +242,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterFour.increaseAttackPower();
         }
 
-        else if((characterTwo.isEnemy === true) && (characterTwo.isDefeated === false)) {
+        else if((characterTwo.isEnemy) && (!characterTwo.isDefeated)) {
             characterFour.performAttack(characterTwo.name);
             characterTwo.getHealthPoints(characterFour.attackPower);
 
-            if(characterTwo.isDefeated === false) {
+            if(!characterTwo.isDefeated) {
                 characterTwo.performCounterAttack(characterFour.name);
                 characterFour.getHealthPoints(characterTwo.counterAttackPower);
             }
@@ -359,11 +254,11 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterFour.increaseAttackPower();
         }
 
-        else if((characterThree.isEnemy === true) && (characterThree.isDefeated === false)) {
+        else if((characterThree.isEnemy) && (!characterThree.isDefeated)) {
             characterFour.performAttack(characterThree.name);
             characterThree.getHealthPoints(characterFour.attackPower);
             
-            if(characterThree.isDefeated === false) {
+            if(!characterThree.isDefeated) {
                 characterThree.performCounterAttack(characterFour.name);
                 characterFour.getHealthPoints(characterThree.counterAttackPower);
             }
@@ -371,21 +266,17 @@ $(document).ready(function(){ // triggers the following script soon as the docum
             characterFour.increaseAttackPower();
         }
 
-        else {
+        else 
             $("#playerAction").html("There is no enemy to attack.");
-            console.log("There is no enemy to attack.");
-        }
     }
 
     function checkGameOver() {
         if((characterOne.isPlayer) && (characterOne.isDefeated) || (characterTwo.isPlayer) && (characterTwo.isDefeated) || (characterThree.isPlayer) && (characterThree.isDefeated) || (characterFour.isPlayer) && (characterFour.isDefeated)) {
                 $("#gameEnds").html("Game over! Player loses!");
-                console.log("Game over! Player loses!");
                 restartGame();
         }
         else if((characterOne.isPlayer) && (characterTwo.isDefeated) && (characterThree.isDefeated) && (characterFour.isDefeated) || (characterTwo.isPlayer) && (characterOne.isDefeated) && (characterThree.isDefeated) && (characterFour.isDefeated) || (characterThree.isPlayer) && (characterOne.isDefeated) && (characterTwo.isDefeated) && (characterFour.isDefeated) || (characterFour.isPlayer) && (characterOne.isDefeated) && (characterTwo.isDefeated) && (characterThree.isDefeated)) {
                 $("#gameEnds").html("Congrats! Player wins!");
-                console.log("Congrats! Player wins!");
                 restartGame();
         }
     }
@@ -403,9 +294,46 @@ $(document).ready(function(){ // triggers the following script soon as the docum
 
     var characterOne = {
         name: "Luke Skywalker",
-        healthPoints: 100,
-        attackPower: 10,
+        healthPoints: 85,
+        attackPower: 12,
         counterAttackPower: 15,
+        isPlayer: false,
+        isEnemy: false,
+        isDefeated: false,
+
+        increaseAttackPower: function() {
+            this.attackPower += 12;    
+        },
+
+        getHealthPoints: function(damage) {
+            this.healthPoints = this.healthPoints - damage;
+            if(this.healthPoints <= 0) {
+                $("#hp1").html("0");
+                this.isDefeated = true;
+                $("#firstCharacter").remove();
+                $("#resultAction").html(this.name + " is defeated.");
+                resetEnemy();
+                checkGameOver();
+            }
+
+            else                 
+                $("#hp1").html(this.healthPoints);
+        },
+
+        performAttack: function(n) {
+            $("#playerAction").html(this.name + " attacks " + n + " for " + this.attackPower + ".");
+        },
+
+        performCounterAttack: function(n) {
+            $("#enemyAction").html(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");   
+        }
+    }
+
+    var characterTwo = {
+        name: "Princess Leia",
+        healthPoints: 80,
+        attackPower: 10,
+        counterAttackPower: 25,
         isPlayer: false,
         isEnemy: false,
         isDefeated: false,
@@ -417,182 +345,98 @@ $(document).ready(function(){ // triggers the following script soon as the docum
         getHealthPoints: function(damage) {
             this.healthPoints = this.healthPoints - damage;
             if(this.healthPoints <= 0) {
-                $("#hp1").html("0");
-                console.log(this.name + "'s health points is now " + 0 + ".");
-                this.isDefeated = true;
-                $("#firstCharacter").remove();
-                $("#resultAction").html(this.name + " is defeated.");
-                console.log(this.name + " is defeated.");
-                resetEnemy();
-                checkGameOver();
-            }
-
-            else {                
-                $("#hp1").html(this.healthPoints);
-                console.log(this.name + "'s health points is now " + this.healthPoints + ".");
-            }
-        },
-
-        performAttack: function(n) {
-            $("#playerAction").html(this.name + " attacks " + n + " for " + this.attackPower + ".");
-            console.log(this.name + " attacks " + n + " for " + this.attackPower + ".");
-        },
-
-        performCounterAttack: function(n) {
-            $("#enemyAction").html(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");   
-            console.log(this.name + " counterattacks " + n + " for " + this.counterAttackPower) + ".";
-        }
-    }
-
-    var characterTwo = {
-        name: "Princess Leia",
-        healthPoints: 80,
-        attackPower: 8,
-        counterAttackPower: 15,
-        isPlayer: false,
-        isEnemy: false,
-        isDefeated: false,
-
-        increaseAttackPower: function() {
-            this.attackPower += 8;    
-        },
-
-        getHealthPoints: function(damage) {
-            this.healthPoints = this.healthPoints - damage;
-            if(this.healthPoints <= 0) {
                 $("#hp2").html("0");
-                console.log(this.name + "'s health points is now " + 0 + ".");
                 this.isDefeated = true;
                 $("#secondCharacter").remove();
                 $("#resultAction").html(this.name + " is defeated.");
-                console.log(this.name + " is defeated.");
                 resetEnemy();
                 checkGameOver();
             }
 
-            else {
+            else 
                 $("#hp2").html(this.healthPoints);
-                console.log(this.name + "'s health points is now " + this.healthPoints + ".");
-            }
         },
 
         performAttack: function(n) {
             $("#playerAction").html(this.name + " attacks " + n + " for " + this.attackPower + ".");
-            console.log(this.name + " attacks " + n + " for " + this.attackPower + ".");
         },
 
         performCounterAttack: function(n) {
             $("#enemyAction").html(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
-            console.log(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
         }
     }
 
     var characterThree = {
         name: "Darth Vader",
-        healthPoints: 110,
-        attackPower: 11,
-        counterAttackPower: 15,
+        healthPoints: 100,
+        attackPower: 10,
+        counterAttackPower: 20,
         isPlayer: false,
         isEnemy: false,
         isDefeated: false,
 
         increaseAttackPower: function() {
-            this.attackPower += 11;    
+            this.attackPower += 10;    
         },
 
         getHealthPoints: function(damage) {
             this.healthPoints = this.healthPoints - damage;
             if(this.healthPoints <= 0) {
                 $("#hp3").html("0");
-                console.log(this.name + "'s health points is now " + 0 + ".");
                 this.isDefeated = true;
                 $("#thirdCharacter").remove();
                 $("#resultAction").html(this.name + " is defeated.");
-                console.log(this.name + " is defeated.");
                 resetEnemy();
                 checkGameOver();
             }
 
-            else {
+            else 
                 $("#hp3").html(this.healthPoints);
-                console.log(this.name + "'s health points is now " + this.healthPoints + ".");
-            }
         },
 
         performAttack: function(n) {
             $("#playerAction").html(this.name + " attacks " + n + " for " + this.attackPower + ".");
-            console.log(this.name + " attacks " + n + " for " + this.attackPower + ".");
         },
 
         performCounterAttack: function(n) {
             $("#enemyAction").html(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
-            console.log(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
         }
     }
 
     var characterFour = {
         name: "Stormtrooper",
-        healthPoints: 90,
-        attackPower: 9,
-        counterAttackPower: 15,
+        healthPoints: 85,
+        attackPower: 15,
+        counterAttackPower: 10,
         isPlayer: false,
         isEnemy: false,
         isDefeated: false,
 
         increaseAttackPower: function() {
-            this.attackPower += 9;   
+            this.attackPower += 15;   
         },
 
         getHealthPoints: function(damage) {
             this.healthPoints = this.healthPoints - damage;
             if(this.healthPoints <= 0) {
                 $("#hp4").html("0");
-                console.log(this.name + "'s health points is now " + 0 + ".");
                 this.isDefeated = true;
                $("#fourthCharacter").remove();
                $("#resultAction").html(this.name + " is defeated.");
-                console.log(this.name + " is defeated.");
                 resetEnemy();
                 checkGameOver();
             }
 
-            else {
+            else 
                 $("#hp4").html(this.healthPoints);
-                console.log(this.name + "'s health points is now " + this.healthPoints + ".");
-            }
         },
 
         performAttack: function(n) {
             $("#playerAction").html(this.name + " attacks " + n + " for " + this.attackPower + ".");
-            console.log(this.name + " attacks " + n + " for " + this.attackPower + ".");
         },
 
         performCounterAttack: function(n) {
              $("#enemyAction").html(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
-            console.log(this.name + " counterattacks " + n + " for " + this.counterAttackPower + ".");
         }
     }
-    /*
-     $(".attack").on("click", function() {
-
-        console.log("CLICKED attack");
-
-        if(characterOne.isPlayer === true) 
-            characterOneVersus();
-
-        else if(characterTwo.isPlayer === true) 
-            characterTwoVersus();
-
-        else if(characterThree.isPlayer === true) 
-            characterThreeVersus();
-
-        else if(characterFour.isPlayer === true) 
-            characterFourVersus();
-    });
-    */
 });
-
-</script>
-
-</body>
-</html>
